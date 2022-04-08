@@ -1,0 +1,259 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@font-face {
+  font-family: "futura", sans-serif;
+  src: url(../Web/Futura/Futura.ttc);
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "bodoni 72", sans-serif;
+  src: url(../Web/Bodoni-72/Bodoni-72.ttc);
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "century expanded", sans-serif;
+  src: url(../Web/CenturyExpanded/CenturyExpanded.otf);
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "garamond", sans-serif;
+  src: url(../Web/Garamond/Garamond\ Regular.ttf);
+  font-style: normal;
+  font-weight: 400;
+}
+
+h1 {
+  font-family: "futura", sans-serif;
+  font-size: 58px;
+  font-weight: 700;
+  color: ghostwhite;
+}
+p {
+  font-family: "centuryexpanded", sans-serif;
+  font-size: 32px;
+  font-weight: 100;
+  font-style: italic;
+  line-height: 10px;
+  color: brown;
+}
+
+/* header */
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100px;
+  position: fixed;
+  width: 100%;
+  font-size: 18px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: rgb(190, 49, 68);
+}
+
+.nav-list {
+  display: flex;
+  gap: 2em;
+  margin-right: 2em;
+  list-style: none;
+  text-transform: uppercase;
+  font-family: "century expanded", sans-serif;
+}
+
+.nav-link {
+  color: ghostwhite;
+  text-decoration: none;
+}
+
+/* about section */
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(
+    62deg,
+    rgb(58, 61, 64) 0%,
+    rgb(24, 23, 25) 100%
+  );
+}
+
+/* work section */
+
+.work {
+  background-color: rgb(69, 86, 125);
+}
+
+.work h1 {
+  text-align: center;
+  margin: 50px auto 50px;
+  width: max-content;
+  border-bottom: 2px solid ghostwhite;
+}
+
+.project-tile {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  height: 100vh;
+  overflow: scroll;
+}
+
+.grid-items {
+  margin: 1em;
+  width: 300px;
+  margin: 10px auto;
+  background-color: rgb(69, 86, 125);
+}
+
+.card_img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.card_content {
+  font-family: "centuryexpanded", sans-serif;
+
+  padding: 1em 0;
+  color: ghostwhite;
+  background-color: rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+.card_content a {
+  text-decoration: none;
+  color: ghostwhite;
+  background-color: rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+
+span {
+  color: darkorange;
+  transition-timing-function: ease-in;
+  transition: 900ms;
+  
+  opacity: 0;
+}
+
+.card_content:hover span {
+  opacity: 1;
+}
+
+/* contact section */
+
+.contact {
+  display: block;
+  text-align: center;
+  height: 100vh;
+  background-color: rgb(48, 56, 65);
+}
+
+.contact p {
+  padding: 1em 1em 0 0;
+  color: ghostwhite;
+  font-size: 22px;
+  font-weight: 100;
+  font-style: italic;
+  margin-bottom: 2em;
+}
+
+.contact h1 {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 20%;
+  padding: 0 0.5em;
+}
+
+i {
+  font-size: 26px;
+  margin: 1em 1em;
+  color: ghostwhite;
+  transition-timing-function: ease-in;
+  transition: 900ms;
+}
+
+i:hover {
+  cursor: pointer;
+  transform: translateY(10px);
+  
+}
+
+section:target::before {
+  content: "";
+  display: block;
+  height: 100px;
+}
+
+@media (min-width: 600px) {
+  p {
+    font-size: 32px;
+  }
+}
